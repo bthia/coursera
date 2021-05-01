@@ -13,5 +13,12 @@ things = [3, 6, 9]
 things3 = triplestuff(things)
 things4 = quadruplestuff(things)
 print(things)
-print(*things3)
-print(*things4)
+print(list(things3))
+print(list(things4))
+
+
+abbrevs = ['usa', 'chn', 'esp', 'jpn', 'sgp', 'rus']
+abbrevs_upper = map(lambda value: value.upper(), abbrevs)
+
+print(abbrevs)
+print(list(abbrevs_upper))
