@@ -26,3 +26,6 @@ inner_string = tester['info']
 compri = [n['name'] for n in inner_string]
 print(json.dumps(inner_string, indent=4))
 print(compri)
+
+
+
