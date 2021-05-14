@@ -41,6 +41,28 @@ def get_movie_data(mname):
     this_page_cache = requests.get(baseurl, params=param)
     return json.loads(this_page_cache.text)
 
+def get_movie_rating(data):
+    rating = 0
+    for i in data['Ratings']:
+        if i['Source'] == 'Rotten Tomatoes':
+            rating = int(i['Value'][:-1])
+            #print(rating)
+    return rating 
+
+
+# some invocations that we use in the automated tests; uncomment these if you are getting errors and want better error messages
+# get_sorted_recommendations(["Bridesmaids", "Sherlock Holmes"])
+
+def get_sorted_recommendations(list):
+    new_list = get_related_titles(list)
+    new_dict = {}
+    for i in new_list:
+        rating = get_movie_rating(get_movie_data(i))
+        new_dict[i] = rating
+    print(new_dict)
+    #print(sorted(new_dict, reverse=True))
+    return [i[0] for i in sorted(new_dict.items(), key=lambda item: (item[1], item[0]), reverse=True)]
+
 
 print("Start----------")
 
