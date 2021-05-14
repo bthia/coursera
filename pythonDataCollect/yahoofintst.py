@@ -21,7 +21,7 @@ url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-timeseries"
 querystring = {"symbol":"IBM","period2":"1571590800","period1":"493578000","region":"US"}
 
 headers = {
-    'x-rapidapi-key': "c0f4cb9395msha50c0fbf744fb23p182612jsn115fe4199d06",
+    'x-rapidapi-key': "",
     'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com"
     }
 
